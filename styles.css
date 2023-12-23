@@ -1,0 +1,142 @@
+body {
+  background-color: hsl(222, 26%, 31%);
+  padding: 30px;
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container {
+  max-width: 500px;
+}
+
+/* header.html */
+h2 {
+  padding: 0;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+#header {
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 25px 5px 0;
+}
+
+.theme-title > p {
+  font-size: 12px;
+}
+
+.theme-style {
+  display: flex;
+  flex-direction: row;
+}
+
+.theme-toggle {
+  background-color: hsl(223, 31%, 20%);
+  width: 70px;
+  height: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  position: relative;
+}
+
+.theme-toggle > button {
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 25px;
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.toggle-point {
+  position: absolute;
+  background-color: hsl(6, 63%, 50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 25px;
+  margin: 5px;
+  border: none;
+  left: 0;
+  z-index: 10;
+}
+
+.toggle-values {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 12px;
+  padding: 3px 0;
+}
+
+/* result.html */
+.result-layout {
+  background-color: hsl(223, 31%, 20%);
+  height: auto;
+  width: 100%;
+  margin: 2vw 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.result {
+  padding: 15px;
+  font-size: 32px;
+}
+
+.grid-layout {
+  background-color: hsl(223, 31%, 20%);
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.grid-layout-2 {
+  background-color: hsl(223, 31%, 20%);
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 15px;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  padding-bottom: 25px;
+}
+
+.grid {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(198, 20%, 13%);
+  border: none;
+  text-align: center;
+  font-size: 32px;
+  border-radius: 5px;
+  padding: 10px;
+}
