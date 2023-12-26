@@ -120,6 +120,19 @@ p {
   border-radius: 5px 5px 0 0;
 }
 
+.grid-layout > button,
+.grid-layout-2 > button {
+  box-shadow: 0 4px hsl(0, 0%, 59%);
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(198, 20%, 13%);
+  cursor: pointer;
+}
+.grid-layout > button:focus,
+.grid-layout-2 > button:focus {
+  box-shadow: 0 3px hsl(0, 0%, 40%), 0px 0px 5px 4px hsl(0, 3%, 77%) inset;
+  background-color: hsl(0, 0%, 96%);
+}
+
 .grid-layout-2 {
   background-color: hsl(223, 31%, 20%);
   max-height: 500px;
@@ -132,11 +145,10 @@ p {
 }
 
 .grid {
-  background-color: hsl(0, 0%, 100%);
-  color: hsl(198, 20%, 13%);
   border: none;
   text-align: center;
   font-size: 32px;
   border-radius: 5px;
   padding: 10px;
+  position: relative;
 }

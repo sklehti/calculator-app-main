@@ -23,6 +23,96 @@ function handleThird() {
     "hsl(176, 100%, 44%)";
 }
 
+// TODO:
+function handleCalculatorBtn(obj) {
+  var snd = new Audio("sounds/click-btn.mp3");
+  snd.play();
+
+  const resultDiv = document.querySelector(".result");
+  let result = resultDiv.textContent === "0" ? "" : resultDiv.textContent;
+  console.log(result, "result");
+
+  switch (obj.value) {
+    case "0":
+      console.log("test", obj.value);
+      result += obj.value;
+
+      break;
+    case "1":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "2":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "3":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "4":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "5":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "6":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "7":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "8":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "9":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "+":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "-":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case ".":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "/":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "*":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "DEL":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "RESET":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    case "=":
+      console.log("test", obj.value);
+      result += obj.value;
+      break;
+    default:
+      console.log(`Sorry, we are out of ${obj}.`);
+  }
+
+  resultDiv.textContent = result;
+}
+
 // poista loput!!!!
 const test = `
     <div  class="attribution">
