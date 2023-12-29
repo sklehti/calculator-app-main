@@ -15,6 +15,7 @@ body {
   /* TODO: fix this!! */
   width: 60vw;
   max-width: 500px;
+  min-width: 300px;
 }
 
 /* header.html */
