@@ -1,15 +1,25 @@
-window.onload = () => {
-  const getStoredView = localStorage.getItem("prefers-color-scheme");
-  document.body.className = getStoredView;
+$(function () {
+  const headerLoaded = $.get("header.html", (data) => {
+    $("#header").html(data);
+  });
 
-  if (getStoredView === "view-1") {
-    handleFirst();
-  } else if (getStoredView === "view-2") {
-    handleSecond();
-  } else {
-    handleThird();
-  }
-};
+  const mainLoaded = $.get("main.html", (data) => {
+    $("#main").html(data);
+  });
+
+  $.when(headerLoaded, mainLoaded).done(() => {
+    const getStoredView = localStorage.getItem("prefers-color-scheme");
+    document.body.className = getStoredView;
+
+    if (getStoredView === "view-1") {
+      handleFirst();
+    } else if (getStoredView === "view-2") {
+      handleSecond();
+    } else {
+      handleThird();
+    }
+  });
+});
 
 function handleFirst() {
   document.body.className = "view-1";
