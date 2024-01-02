@@ -241,11 +241,15 @@ function handleCalculatorBtn(button) {
 
   if (!isNaN(btnValue) || btnValue === ".") {
     if (operator) {
-      operand2 += btnValue;
-      resultDiv.textContent = operand2.toString().replace(/\./g, ",");
+      if ((btnValue === "." && !operand2.includes(".")) || btnValue !== ".") {
+        operand2 += btnValue;
+        resultDiv.textContent = operand2.toString().replace(/\./g, ",");
+      }
     } else {
-      operand1 += btnValue;
-      resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+      if ((btnValue === "." && !operand1.includes(".")) || btnValue !== ".") {
+        operand1 += btnValue;
+        resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+      }
     }
   } else if (["+", "-", "*", "/"].includes(btnValue)) {
     if (operand2) {
@@ -260,7 +264,13 @@ function handleCalculatorBtn(button) {
     operand1 = calculate(operand1, operand2, operator);
     operand2 = "";
     operator = "";
-    resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+
+    if (!isNaN(operand1)) {
+      resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+    } else {
+      operand1 = "";
+      resultDiv.textContent = "0";
+    }
   } else if (btnValue === "DEL") {
     if (operator) {
       operand2 = "";
