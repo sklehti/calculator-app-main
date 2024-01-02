@@ -12,10 +12,9 @@ body {
 }
 
 .container {
-  /* TODO: fix this!! */
   width: 60vw;
   max-width: 500px;
-  min-width: 300px;
+  min-width: 350px;
 }
 
 /* header.html */
@@ -28,9 +27,6 @@ h2 {
 p {
   padding: 0;
   margin: 0;
-}
-
-#header {
 }
 
 .header {
@@ -103,19 +99,17 @@ p {
   color: hsl(0, 0%, 100%);
   height: auto;
   width: 100%;
-  margin: 2vw 0;
+  margin: 30px 0;
   border-radius: 10px;
   display: flex;
   justify-content: end;
   align-items: center;
 }
 
-/* TODO: */
 .result {
   padding: 25px;
   font-size: 38px;
   overflow: hidden;
-  /* direction: rtl; */
   word-wrap: break-word;
 }
 
@@ -164,7 +158,6 @@ p {
   box-shadow: 0 4px hsl(6, 70%, 34%);
 }
 #result-btn:active {
-  /* box-shadow: 0 3px hsl(6, 70%, 28%), 0px 0px 5px 4px hsl(6, 63%, 38%) inset; */
   background-color: hsl(6, 83%, 45%);
 }
 
@@ -188,4 +181,33 @@ p {
   position: relative;
 }
 
-/* TODO: mobile view styel here: */
+@media only screen and (max-width: 650px) {
+  .result {
+    padding: 20px;
+    font-size: 32px;
+  }
+
+  .grid-layout {
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .grid-layout-2 {
+    gap: 12px;
+    padding: 0 20px 30px 20px;
+  }
+
+  .grid {
+    font-size: 28px;
+    padding: 10px 8px;
+  }
+
+  #del-btn,
+  #reset-btn {
+    font-size: 18px;
+  }
+
+  .result-layout {
+    margin: 20px 0;
+  }
+}

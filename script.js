@@ -203,92 +203,67 @@ function handleThird() {
   });
 }
 
-function handleCalculatorBtn(obj) {
-  var snd = new Audio("sounds/click-btn.mp3");
-  snd.play();
+let operand1 = "";
+let operand2 = "";
+let operator = "";
 
+function handleCalculatorBtn(button) {
+  const btnValue = button.value;
   const resultDiv = document.querySelector(".result");
-  let operand = resultDiv.textContent === "0" ? "" : resultDiv.textContent;
 
-  switch (obj.value) {
-    case "0":
-      operand += obj.value;
-      break;
-    case "1":
-      operand += obj.value;
+  if (!isNaN(btnValue) || btnValue === ".") {
+    if (operator) {
+      operand2 += btnValue;
+      resultDiv.textContent = operand2.toString().replace(/\./g, ",");
+    } else {
+      operand1 += btnValue;
+      resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+    }
+  } else if (["+", "-", "*", "/"].includes(btnValue)) {
+    if (operand2) {
+      operand1 = calculate(operand1, operand2, operator);
+      operand2 = "";
+      operator = "";
+      resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+    }
 
-      break;
-    case "2":
-      operand += obj.value;
-
-      break;
-    case "3":
-      operand += obj.value;
-
-      break;
-    case "4":
-      operand += obj.value;
-
-      break;
-    case "5":
-      operand += obj.value;
-
-      break;
-    case "6":
-      operand += obj.value;
-
-      break;
-    case "7":
-      operand += obj.value;
-
-      break;
-    case "8":
-      operand += obj.value;
-
-      break;
-    case "9":
-      operand += obj.value;
-
-      break;
-    case "+":
-      operand += " " + obj.value + " ";
-
-      break;
-    case "-":
-      operand += " " + obj.value + " ";
-
-      break;
-    case ",":
-      operand += obj.value;
-
-      break;
-    case "/":
-      operand += " " + obj.value + " ";
-
-      break;
-    case "*":
-      operand += " " + obj.value + " ";
-
-      break;
-    case "DEL":
-      // TODO: delete last number
-      console.log(operand);
-
-      break;
-    case "RESET":
-      operand = 0;
-      break;
-    case "=":
-      // TODO: eval function isn't safety. change it!
-      console.log(operand);
-      operand = operand.replace(/,/g, ".");
-      operand = eval(operand);
-      operand = operand.toString().replace(/\./g, ",");
-
-      break;
-    default:
-      console.log(`Sorry, we are out of ${obj}.`);
+    operator = btnValue;
+  } else if (btnValue === "=") {
+    operand1 = calculate(operand1, operand2, operator);
+    operand2 = "";
+    operator = "";
+    resultDiv.textContent = operand1.toString().replace(/\./g, ",");
+  } else if (btnValue === "DEL") {
+    if (operator) {
+      operand2 = "";
+      operator = "";
+      resultDiv.textContent = operand1;
+    } else {
+      operand1 = "";
+      resultDiv.textContent = "0";
+    }
+  } else if (btnValue === "RESET") {
+    operand1 = "";
+    operand2 = "";
+    operator = "";
+    resultDiv.textContent = "0";
   }
+}
 
-  resultDiv.textContent = operand;
+function calculate(operand1, operand2, operator) {
+  operand1 = parseFloat(operand1);
+  operand2 = parseFloat(operand2);
+
+  switch (operator) {
+    case "+":
+      return operand1 + operand2;
+    case "-":
+      return operand1 - operand2;
+    case "*":
+      return operand1 * operand2;
+    case "/":
+      return operand1 / operand2;
+    default:
+      return operand1;
+  }
 }
