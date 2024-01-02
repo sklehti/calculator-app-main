@@ -2,7 +2,23 @@ const toggleFirst = document.getElementById("toggle_1");
 const toggleSecond = document.getElementById("toggle_2");
 const toggleThird = document.getElementById("toggle_1");
 
+window.onload = () => {
+  const getStoredView = localStorage.getItem("prefers-color-scheme");
+  document.body.className = getStoredView;
+
+  if (getStoredView === "view-1") {
+    handleFirst();
+  } else if (getStoredView === "view-2") {
+    handleSecond();
+  } else {
+    handleThird();
+  }
+};
+
 function handleFirst() {
+  document.body.className = "view-1";
+  localStorage.setItem("prefers-color-scheme", "view-1");
+
   document.body.style.backgroundColor = "hsl(222, 26%, 31%)";
 
   const allBtn = document.querySelectorAll(
@@ -70,6 +86,9 @@ function handleFirst() {
 }
 
 function handleSecond() {
+  document.body.className = "view-2";
+  localStorage.setItem("prefers-color-scheme", "view-2");
+
   document.body.style.backgroundColor = "hsl(185, 42%, 37%)";
 
   const allBtn = document.querySelectorAll(
@@ -137,6 +156,9 @@ function handleSecond() {
 }
 
 function handleThird() {
+  document.body.className = "view-3";
+  localStorage.setItem("prefers-color-scheme", "view-3");
+
   document.body.style.backgroundColor = "hsl(268, 75%, 9%)";
 
   const allBtn = document.querySelectorAll(
