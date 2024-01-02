@@ -1,7 +1,3 @@
-const toggleFirst = document.getElementById("toggle_1");
-const toggleSecond = document.getElementById("toggle_2");
-const toggleThird = document.getElementById("toggle_1");
-
 window.onload = () => {
   const getStoredView = localStorage.getItem("prefers-color-scheme");
   document.body.className = getStoredView;
