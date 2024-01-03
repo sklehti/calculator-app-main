@@ -11,12 +11,12 @@ $(function () {
     const getStoredView = localStorage.getItem("prefers-color-scheme");
     document.body.className = getStoredView;
 
-    if (getStoredView === "view-1") {
-      handleFirst();
+    if (getStoredView === "view-3") {
+      handleThird();
     } else if (getStoredView === "view-2") {
       handleSecond();
     } else {
-      handleThird();
+      handleFirst();
     }
   });
 });
