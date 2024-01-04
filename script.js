@@ -239,8 +239,8 @@ function handleCalculatorBtn(button) {
   const btnValue = button.value;
   const resultDiv = document.querySelector(".result");
 
-  var snd = new Audio("/sounds/click-btn.mp3");
-  snd.play();
+  // var snd = new Audio("/sounds/click-btn.mp3");
+  // snd.play();
 
   if (!isNaN(btnValue) || btnValue === ".") {
     if (operator) {
