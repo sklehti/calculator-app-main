@@ -236,12 +236,12 @@ let operand2 = "";
 let operator = "";
 
 function handleCalculatorBtn(button) {
+  let snd = new Audio("/sounds/click-btn.mp3");
+  snd.volume = 0.1;
+  snd.play();
+
   const btnValue = button.value;
   const resultDiv = document.querySelector(".result");
-
-  var snd = new Audio("/sounds/click-btn.mp3");
-  snd.volume = 0.2;
-  snd.play();
 
   if (!isNaN(btnValue) || btnValue === ".") {
     if (operator) {
