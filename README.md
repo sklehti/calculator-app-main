@@ -20,3 +20,7 @@ Users should be able to:
 ### Application is running
 
 - https://calculator-app-main-iota.vercel.app/
+
+## To run locally
+- You can run the application by downloading the live server extension of the visual studio code
+- Note! Because the application uses the jquery library to load some files, the application cannot be launched by opening the index.html file in the browser.
